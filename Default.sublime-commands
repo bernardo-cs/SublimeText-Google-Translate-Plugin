@@ -1,0 +1,6 @@
+[
+  {
+    "caption":"Google Translate selected text",
+    "command": "go_translate"
+  }
+]

@@ -1,0 +1,8 @@
+[
+	{"caption":"-"},
+    { 
+    	"command": "go_translate", 
+    	"id":"go-translate",
+    	"caption": "Google translate text" 
+    }
+]
