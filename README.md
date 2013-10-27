@@ -8,8 +8,7 @@ Configure:
 
 1. Set Target Language [default is english] AND Source Language [default is auto detect] in user settings:
 
-<pre><code>
-{
+<pre><code>{
 "target_language": "en",
 "source_language": "zh-CN"
 }
@@ -31,6 +30,9 @@ What features
 
 
 
+
+
+
 SublimeText Google 翻译插件
 ========================
 <h2>SublimeText Google 翻译插件 支持 ST 2 和 3</h2>
@@ -47,8 +49,7 @@ SublimeText Google 翻译插件
 ---------------
 
 1. 在用户文件中设置 Target Language[默认是英文] 和 Source Language[默认Google自动检测] :
-<pre><code>
-{
+<pre><code>{
 "target_language": "zh-CN",
 "source_language": "en"
 }
