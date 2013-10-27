@@ -19,7 +19,7 @@ Use:
 Select text and:
 - press <code>ctrl+alt+g</code> or select <code>Google translate text</code> in context menu
 
-What features
+Features
 --------------------------
 - 72 languages support!
 - SublimeText 2 & 3 support!
