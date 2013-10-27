@@ -1,6 +1,6 @@
 Sublime Google Translate Plugin
 ========================
-<h2>Google Translate plugin for SublimeText 2 and 3</h2>
+<h2>For SublimeText 2 & 3</h2>
 
 
 Configure:
@@ -10,8 +10,8 @@ Configure:
 
 <pre><code>
 {
-    "target_language": "en",
-    "source_language": "zh-CN"
+"target_language": "en",
+"source_language": "zh-CN"
 }
 <code></pre>
 
@@ -47,14 +47,10 @@ SublimeText Google 翻译插件
 ---------------
 
 1. 在用户文件中设置 Target Language[默认是英文] 和 Source Language[默认Google自动检测] :
-
 <pre><code>
 {
-
-    "target_language": "zh-CN",
-
-    "source_language": "en"
-
+"target_language": "zh-CN",
+"source_language": "en"
 }
 <code></pre>
 
