@@ -4,12 +4,14 @@
 
 import sublime
 import sublime_plugin
-try:
-    from urllib import urlopen, urlencode
-except:
-    from urllib.request import urlopen
-    from urllib.parse import urlencode
-from urllib.request import Request
+# try:
+#     from urllib import urlopen, urlencode, request
+# except:
+#     from urllib.request import urlopen
+#     from urllib.parse import urlencode
+#     from urllib.request import Request
+import urllib
+import urllib2
 import json
 import re
 
@@ -30,7 +32,7 @@ class GoTranslateCommand(sublime_plugin.TextCommand):
                 v = self.view
                 selection = v.substr(region)
 
-                result = translate(selection, source_language, target_language)
+                result = translate(selection.encode("utf-8"), source_language, target_language)
 
                 text = (json.dumps(result[0][0][0], ensure_ascii = False)).strip('"').replace('\\n', "\n").replace('\\t', "\t").replace('\\"', '"')
 
@@ -47,18 +49,18 @@ class GoTranslateCommand(sublime_plugin.TextCommand):
 
 def translate(text, sl, tl):
         if sl:
-            data = urlencode({'text': text, 'sl': sl, 'tl': tl})
+            data = urllib.urlencode({'text': text, 'sl': sl, 'tl': tl})
         else:
-            data = urlencode({'text': text, 'sl': 'auto', 'tl': tl})
+            data = urllib.urlencode({'text': text, 'sl': 'auto', 'tl': tl})
 
-        request = Request(api_url % data)
-        request.add_header('User-Agent', 'Mozilla/5.0')
+        request_body = urllib2.Request(api_url % data)
+        request_body.add_header('User-Agent', 'Mozilla/5.0')
         if sublime.version() < '3':
-            result = urlopen(request).read()
+            result = urllib2.urlopen(request_body).read()
             fixed_json = re.sub(r',{2,}', ',', result).replace(',]', ']')
             jsons = json.loads(fixed_json.decode("utf-8"))
         else:
-            result = urlopen(request).read().decode("utf-8")
+            result = urllib2.urlopen(request_body).read().decode("utf-8")
             fixed_json = re.sub(r',{2,}', ',', result).replace(',]', ']')
             jsons = json.loads(fixed_json)
         return jsons

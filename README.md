@@ -2,6 +2,20 @@ Sublime Google Translate Plugin
 ========================
 <h2>For SublimeText 2 & 3</h2>
 
+Install:
+---------------
+1. cd to the packages folder (on a mac) & clone the repo
+
+<pre><code>
+cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/
+git clone https://github.com/MtimerCMS/SublimeText-Google-Translate-Plugin.git
+<code></pre>
+
+2. Move the folder
+
+<pre><code>
+  mv SublimeText-Google-Translate-Plugin GoogleTranslate
+<code></pre>
 
 Configure:
 ---------------
